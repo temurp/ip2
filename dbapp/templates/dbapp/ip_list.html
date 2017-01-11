@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- <form action=".">
+	<input type="text" name="query">
+	<input type="submit" value="Find">
+</form> -->
+
+<table class="table table-fixed table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Фамилия</th>
+			<th>Имя</th>
+			<th>Отчество</th>
+			<th>Группа</th>
+			<th>IP адрес</th>
+			<th>Имя хоста</th>
+			<th>Дата изменения</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for user in object_list %}	
+		<tr>
+			<td>{{ user.Familiya }}</td>
+			<td>{{ user.Imya }}</td>
+			<td>{{ user.Otchestvo }}</td>
+			<td>{{ user.gr }}</td>
+			<td>{{ user.IP }}</td>
+			<td>{{ user.host }}</td>
+			<td>{{ user.edit_date }}</td>
+			<td><a href="{% url 'ip_edit' user.id %}">Изменить</a></td>
+			<td><a href="{% url 'ip_delete' user.id %}">Удалить</a></td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+{% endblock content %}

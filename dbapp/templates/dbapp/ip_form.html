@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="post" class="form-signin">{% csrf_token %}
+	<ul class="list-group">
+		<li class="list-group-item"><div class="text-center">Фамилия: <br>{{ form.Familiya }}</div></li>
+		<li class="list-group-item"><div class="text-center">Имя: <br>{{ form.Imya }}</div></li>
+		<li class="list-group-item"><div class="text-center">Отчество: <br>{{ form.Otchestvo }}</div></li>
+		<li class="list-group-item"><div class="text-center">Группа: <br>{{ form.gr }}</div></li>
+		<li class="list-group-item"><div class="text-center">IP адрес: <br>{{ form.IP }}</div></li>
+		<li class="list-group-item"><div class="text-center">Имя хоста: <br>{{ form.host }}</div></li>
+		<li class="list-group-item"><div class="text-center">Дата изменения: <br>{{ form.edit_date }}</div></li>
+	</ul>
+	<div class="text-center"><button type="submit" class="btn btn-lg btn-primary btn-block">Подтвердить</button></div>
+</form>
+
+
+{% endblock content %}

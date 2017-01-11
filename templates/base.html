@@ -1,0 +1,43 @@
+{% load staticfiles %}
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>List of IPs and users</title>
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/base.css' %}">
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+
+<div class="navbar-header">
+      <a class="navbar-brand" href="{% url 'ip_list' %}">TSB IPs and Users</a>
+    </div>
+
+
+	<ul class="nav navbar-nav">
+    	<li><a href="{% url 'ip_new' %}">Добавить пользователя</a></li>
+    </ul>
+
+
+	<form action="." class="navbar-form navbar-right" role="search">
+		<input type="text" name="query" class="form-control" placeholder="Найти...">
+		<input type="submit" class="btn btn-primary" value="Поиск">
+	</form> 
+
+  </div>
+
+</nav>
+
+	<div class="container" style="margin-top: 5%;">
+		
+		{% block content %}
+		{% endblock content %}	
+
+	</div>
+	<h6 class="text-center">TSB SAT © 2017</h6>
+</body>
+</html>

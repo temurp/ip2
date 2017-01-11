@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="POST" class="form-signin" style="padding-top: 10%;">
+	<h3 class="text-center">Введите имя пользователя и пароль</h3>
+	{% csrf_token %}
+	
+	<ul class="list-group">
+		<li class="list-group-item"><div class="text-center">Имя пользователя: <br>{{ form.username }}</div></li>
+		<li class="list-group-item"><div class="text-center">Пароль: <br>{{ form.password }}</div></li>
+	</ul>
+	<!-- {{ form.as_p }} -->
+	<button type="submit" class="btn btn-lg btn-primary btn-block">Войти</button>
+</form>
+{% endblock content %}
