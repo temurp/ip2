@@ -11,21 +11,22 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+from ip2 import secret
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = secret.BASE_DIR
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!)itx7-ot=ets*aptxc==4)fzh6nz$ihs9&5juzcteas!pc+#-'
+SECRET_KEY = secret.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = secret.DEBUG
 
-ALLOWED_HOSTS = ['172.16.201.201']
+ALLOWED_HOSTS = secret.ALLOWED_HOSTS
 
 
 # Application definition
@@ -74,16 +75,7 @@ WSGI_APPLICATION = 'ip2.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ip2',
-        'USER': 'myadmin',
-        'PASSWORD': 'aA11111+',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
+DATABASES = secret.DATABASES
 
 
 # Password validation
